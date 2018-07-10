@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AppBancoUniversal.XAML.RegistroPage">
+<ContentPage BackgroundColor="AliceBlue" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AppBancoUniversal.XAML.RegistroPage">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" BackgroundColor="White" Padding="10" >
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" BackgroundColor="AliceBlue" Padding="10" >
+        <Image Source="IMG/GE.png" HeightRequest="150" WidthRequest="200" />
             <Label x:Name="lblRegistro" Text="Registro"  HorizontalOptions="CenterAndExpand" TextColor="Black"/>
             <Entry x:Name="txtNombre" HorizontalOptions="FillAndExpand" Placeholder="Nombre" PlaceholderColor="Gray" BackgroundColor="Beige" TextColor="Black"/>
             <Entry x:Name="txtApellidos" HorizontalOptions="Fill" Placeholder="Apellidos" PlaceholderColor="Gray" BackgroundColor="Beige" TextColor="Black"/>
@@ -11,6 +12,7 @@
             <Entry x:Name="txtContrasena" HorizontalOptions="Fill"  Placeholder="Contraseña" PlaceholderColor="Gray" BackgroundColor="Beige" TextColor="Black"/>
             <Entry x:Name="txtConfirmarContrasena" HorizontalOptions="Fill"  Placeholder="Confirmar contraseña" PlaceholderColor="Gray" BackgroundColor="Beige" TextColor="Black"/>
             <Button x:Name="btnRegistrar" Text="Registrarme" BackgroundColor="DodgerBlue" TextColor="White"/>
+            <Button x:Name="btnRegresar" Text="Regresar" BackgroundColor="Maroon" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

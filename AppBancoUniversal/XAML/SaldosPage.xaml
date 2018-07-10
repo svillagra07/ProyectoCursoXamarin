@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AppBancoUniversal.XAML.SaldosPage" Title="Cuentas" Icon="IMG/saldos_25_25.png" BackgroundColor="AliceBlue" >
+    <ContentPage.Content>
+         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" BackgroundColor="AliceBlue" Padding="10" >
+         <Label Text="Bienvenido Samuel Villagra Zapata." TextColor="Navy" />
+            <Label Text="Detalle de cuentas" TextColor="Navy" />
+        <ListView ItemsSource="{Binding}" BackgroundColor="AliceBlue">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ImageCell Text="{Binding DetalleCuenta}" Detail="{Binding DetalleSaldo}" ImageSource="IMG/ahorro_25_25.png">
+                </ImageCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

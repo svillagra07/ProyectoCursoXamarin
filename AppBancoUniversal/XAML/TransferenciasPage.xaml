@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AppBancoUniversal.XAML.TransferenciasPage"
+             Title="Transferencias" Icon="IMG/transferencias_25_25.png" BackgroundColor="AliceBlue">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" BackgroundColor="AliceBlue" Padding="10" >
+            <Picker Title="Seleccione cuenta origen" ItemsSource="{Binding}" ItemDisplayBinding="{Binding DetalleCuenta}" TextColor="Navy" />
+            <Label x:Name="lblDetalleSaldoOrigen" Text="" TextColor="Navy" HorizontalOptions="Center" />
+            <Picker Title="Seleccione cuenta destino" ItemsSource="{Binding}" ItemDisplayBinding="{Binding DetalleCuenta}" TextColor="Navy" />    
+            <Label Text="" TextColor="Navy" HorizontalOptions="Center" />
+            <Entry x:Name="txtMonto" HorizontalOptions="Fill"  Placeholder="Monto" PlaceholderColor="Gray" BackgroundColor="Beige" TextColor="Black"/>
+            <Entry x:Name="txtDescripcion" HorizontalOptions="Fill"  Placeholder="Descripción" PlaceholderColor="Gray" BackgroundColor="Beige" TextColor="Black"/>
+            <Button x:Name="btnTransferir" Text="Realizar transferencia" BackgroundColor="DodgerBlue" TextColor="White"/>
+            <Button x:Name="btnRegresar" Text="Regresar" BackgroundColor="Maroon" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

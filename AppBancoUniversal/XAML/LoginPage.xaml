@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AppBancoUniversal.XAML.LoginPage">
+<ContentPage BackgroundColor="SteelBlue" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AppBancoUniversal.XAML.LoginPage">
     <ContentPage.Content>
-            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  BackgroundColor ="White" Padding="80" Spacing="5" HorizontalOptions="Center">
-            <Label Text="Banco Universal" HorizontalOptions="Center" />
-            <Image Source="IMG/GE.png" HeightRequest="200" WidthRequest="200" />
-            <Label Text="¡Bienvenido!" HorizontalOptions="Center" />
-            <Entry x:Name="txtUsuario" Text="" Placeholder="Usuario" HorizontalOptions="CenterAndExpand" />
-            <Entry x:Name="txtContrasena" Text="" Placeholder="Contraseña" IsPassword="True" HorizontalOptions="CenterAndExpand"  />
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button x:Name="btnIniciarSesion" Text="Iniciar sesión" TextColor="White" BackgroundColor="DodgerBlue"   />
-                <Button x:Name="btnRegistrar" Text="Registrarme" TextColor="White" BackgroundColor="DodgerBlue" />
-            </StackLayout>
-            <Button x:Name="btnOlvidoClave" Text="Olvidé mi contraseña" HorizontalOptions="CenterAndExpand"  />
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" BackgroundColor="SteelBlue" Padding="10" >
+            <Label Text="Banco Universal" TextColor="Navy" HorizontalOptions="Center" />
+            <Image Source="IMG/GE.png" HeightRequest="150" WidthRequest="200" />
+            <Label Text="¡Bienvenido!" HorizontalOptions="Center"  TextColor="Navy"/>
+            <Entry x:Name="txtUsuario" Text="" Placeholder="Usuario" HorizontalOptions="Fill" BackgroundColor="Beige" />
+            <Entry x:Name="txtContrasena" Text="" Placeholder="Contraseña" IsPassword="True" HorizontalOptions="Fill"  BackgroundColor="Beige" />
+            <Button x:Name="btnIniciarSesion" Text="Iniciar sesión" BackgroundColor="Navy" TextColor="White"/>
+            <Button x:Name="btnRegistrar" Text="Registrarme" BackgroundColor="Navy" TextColor="White"  />
+            <Button x:Name="btnOlvidoClave" Text="Olvidé mi contraseña" BackgroundColor="Maroon" TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

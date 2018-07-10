@@ -11,7 +11,7 @@ namespace AppBancoUniversal
         {
             InitializeComponent();
 
-            MainPage = new XAML.LoginPage();
+            MainPage = new NavigationPage(new XAML.LoginPage());
         }
 
         protected override void OnStart()

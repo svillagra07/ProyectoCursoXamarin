@@ -1,21 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
             x:Class="AppBancoUniversal.XAML.PrincipalPage"
-            xmlns:local="clr-namespace:AppBancoUniversal.XAML;assembly=AppBancoUniversal">
-    <NavigationPage   Title="Saldos" Icon="IMG/saldos_25_25.png" BarTextColor="White"  BarBackgroundColor="SteelBlue" BackgroundColor="SteelBlue" >
-        <x:Arguments>
-            <local:SaldosPage />
-        </x:Arguments>
-    </NavigationPage>
-    <NavigationPage Title="Transferencias"  Icon="IMG/transferencias_25_25.png" BarTextColor="White" BarBackgroundColor="SteelBlue" BackgroundColor="SteelBlue">
-        <x:Arguments>
-            <local:TransferenciasPage />
-        </x:Arguments>
-    </NavigationPage>
-    <NavigationPage Title="Pagos"  Icon="IMG/pagos_25_25.png" BarTextColor="White" BarBackgroundColor="SteelBlue" BackgroundColor="SteelBlue">
-        <x:Arguments>
-            <local:PagosPage />
-        </x:Arguments>
-    </NavigationPage>
-</TabbedPage>
+            xmlns:local="clr-namespace:AppBancoUniversal.XAML;assembly=AppBancoUniversal"  >
+
+    <MasterDetailPage.Master>
+       <ContentPage Title="Menú" Icon="IMG/ic_menu_black_18dp.png" Padding="10" >
+          <StackLayout  HorizontalOptions="StartAndExpand"  Orientation="Vertical" BackgroundColor="AliceBlue" Padding="10" >
+             <ListView x:Name="listView" SeparatorVisibility="None" BackgroundColor="AliceBlue"  ItemSelected="Handle_ItemSelected" >
+           <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:MasterPageItem}" >
+                    <local:MasterPageItem Title="Inicio" IconSource="IMG/ic_home_black_18dp.png" TargetType="{x:Type local:SaldosPage}" />
+                    <local:MasterPageItem Title="Información Disp." IconSource="IMG/ic_perm_device_information_black_18dp.png" TargetType="{x:Type local:DeviceInfoPage}" />
+                    <local:MasterPageItem Title="Cerrar sesión" IconSource="IMG/ic_exit_to_app_black_18dp.png" TargetType="{x:Type local:LoginPage}" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" TextColor="Black"  />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+          </StackLayout>
+       </ContentPage>
+   </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>  
+    <TabbedPage>       
+        <NavigationPage  Title="Saldos"  Icon="IMG/saldos_25_25.png"  BarTextColor="White"  BarBackgroundColor="SteelBlue" BackgroundColor="SteelBlue" >
+            <x:Arguments>
+                <local:SaldosPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Transferencias"  Icon="IMG/transferencias_25_25.png"  BarTextColor="White" BarBackgroundColor="SteelBlue" BackgroundColor="SteelBlue">
+            <x:Arguments>
+                <local:TransferenciasPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Pagos"   Icon="IMG/pagos_25_25.png"  BarTextColor="White" BarBackgroundColor="SteelBlue" BackgroundColor="SteelBlue">
+            <x:Arguments>
+                <local:PagosPage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage>
+ </MasterDetailPage.Detail>
+</MasterDetailPage>

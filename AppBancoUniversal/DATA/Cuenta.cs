@@ -13,6 +13,7 @@ namespace AppBancoUniversal.DATA
         public decimal Saldo { get; set; }
         public EstadoCuenta Estado { get; set; }
         public Moneda Moneda { get; set; }
+        public DateTime FechaCreacion { get; set; }
 
 
         public string DetalleCuenta

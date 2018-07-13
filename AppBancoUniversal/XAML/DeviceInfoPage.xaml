@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AppBancoUniversal.XAML.DeviceInfoPage" 
+             Title="Información de dispositivo"  
+             BackgroundColor="AliceBlue" >
+
+    <ContentPage.Content>
+         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" BackgroundColor="AliceBlue" Padding="10" >
+        <ListView ItemsSource="{Binding}" BackgroundColor="AliceBlue" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                     
+                   <StackLayout Orientation="Vertical" HorizontalOptions="Fill">  
+                     <Image Source="IMG/ic_perm_device_information_black_48dp.png"/>
+                    <Label Text="{Binding DetalleModel}"  /> 
+                    <Label Text="{Binding DetalleManufacturer}" />
+                    <Label Text="{Binding DetalleDeviceName}" />
+                    <Label Text="{Binding DetalleVersion}" />
+                    <Label Text="{Binding DetallePlatform}" />
+                    <Label Text="{Binding DetalleIdiom}" />
+                    <Label Text="{Binding DetalleDeviceType}" />
+                </StackLayout>
+               </ViewCell> 
+             </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="AppBancoUniversal.XAML.PagosPage"
-             Title="Pagos" Icon="IMG/pagos_25_25.png" BackgroundColor="AliceBlue">
+             Title="Pagos" BackgroundColor="AliceBlue">
     <ContentPage.Content>
              <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" BackgroundColor="AliceBlue" Padding="10" >
              <Picker x:Name="picker" Title="Seleccione un servicio">
@@ -15,6 +15,10 @@
                 </x:Array>
               </Picker.ItemsSource>
             </Picker>
+             <Picker Title="Seleccione cuenta origen" ItemsSource="{Binding}" ItemDisplayBinding="{Binding DetalleCuenta}" TextColor="Navy" />
+            <Entry x:Name="txtMonto" HorizontalOptions="Fill"  Placeholder="Monto" PlaceholderColor="Gray" BackgroundColor="Beige" TextColor="Black"/>
+            <Button x:Name="btnPagar" Text="Realizar pago" BackgroundColor="DodgerBlue" TextColor="White"/>
+            <Button x:Name="btnRegresar" Text="Regresar" BackgroundColor="Maroon" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

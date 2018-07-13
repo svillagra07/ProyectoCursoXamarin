@@ -11,12 +11,27 @@ namespace AppBancoUniversal.XAML
         readonly IList<Cliente> clientes = new ObservableCollection<Cliente>();
         readonly IList<Cuenta> cuentas = new ObservableCollection<Cuenta>();
 
-        Cliente cliente = new Cliente { CodigoCliente = 1, Nombre = "Samuel Villagra", 
-            FechaNacimiento = Convert.ToDateTime("1984/06/27"), Estado = EstadoCliente.Activo,  ListaCuentas = null };
+        Cliente cliente = new Cliente
+        {
+            CodigoCliente = 1,
+            Nombre = "Samuel Villagra",
+            FechaNacimiento = Convert.ToDateTime("1984/06/27"),
+            Estado = EstadoCliente.Activo,
+            ListaCuentas = null
+        };
+
+
+
+        void Handle_Clicked_1(object sender, System.EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new XAML.LoginPage());
+        }
+       
 
 
         public SaldosPage()
         {
+            
 
             clientes.Add(cliente);
 
